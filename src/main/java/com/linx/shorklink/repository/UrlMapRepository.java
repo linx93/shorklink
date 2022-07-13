@@ -1,6 +1,6 @@
 package com.linx.shorklink.repository;
 
-import com.linx.shorklink.entity.po.UrlMap;
+import com.linx.shorklink.model.po.UrlMap;
 import org.springframework.data.r2dbc.repository.Query;
 import org.springframework.data.repository.query.ReactiveQueryByExampleExecutor;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;

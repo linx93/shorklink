@@ -1,5 +1,7 @@
 package com.linx.shorklink.exception;
 
+import com.linx.shorklink.constant.ResultCode;
+
 /**
  * 基本异常
  *
@@ -17,6 +19,11 @@ public class BasicException extends RuntimeException {
         this.message = message;
     }
 
+
+    public BasicException(ResultCode resultCode) {
+        this.code = resultCode.name();
+        this.message = message;
+    }
 
 
     public BasicException(String message) {

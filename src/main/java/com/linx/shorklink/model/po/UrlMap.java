@@ -1,4 +1,4 @@
-package com.linx.shorklink.entity.po;
+package com.linx.shorklink.model.po;
 
 import org.springframework.data.annotation.Id;
 

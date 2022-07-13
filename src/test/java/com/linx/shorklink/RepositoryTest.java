@@ -1,17 +1,13 @@
 package com.linx.shorklink;
 
-import com.linx.shorklink.entity.po.UrlMap;
+import com.linx.shorklink.model.po.UrlMap;
 import com.linx.shorklink.repository.UrlMapRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Example;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-import reactor.core.scheduler.Schedulers;
 import reactor.test.StepVerifier;
 
-import java.time.Duration;
 import java.time.OffsetDateTime;
 import java.util.List;
 
