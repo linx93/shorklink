@@ -1,6 +1,8 @@
 package com.linx.shorklink.service;
 
+import com.linx.shorklink.model.po.UrlMap;
 import com.linx.shorklink.model.request.CreateShortlinkRequest;
+
 
 /**
  * 短链接处理
@@ -11,8 +13,9 @@ import com.linx.shorklink.model.request.CreateShortlinkRequest;
 public interface ShortlinkService {
     /**
      * CreateShortlinkRequest
+     *
      * @param element element
-     * @return bool
+     * @return Mono<UrlMap>
      */
-    Boolean create(CreateShortlinkRequest element);
+    UrlMap defaultCreate(CreateShortlinkRequest element);
 }

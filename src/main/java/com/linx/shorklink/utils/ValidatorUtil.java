@@ -15,12 +15,11 @@ public class ValidatorUtil {
     private ValidatorUtil() {
     }
 
-    private final static UrlValidator urlValidator = new UrlValidator(new String[]{Protocol.https.name(), Protocol.http.name()});
+    private final static UrlValidator URL_VALIDATOR = new UrlValidator(new String[]{Protocol.https.name(), Protocol.http.name()});
 
-    public static boolean isUrl(String url) {
-        if (!urlValidator.isValid(url)) {
+    public static void isUrl(String url) {
+        if (!URL_VALIDATOR.isValid(url)) {
             throw new ClientException(ResultCode.URL_ERROR);
         }
-        return true;
     }
 }
