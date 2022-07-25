@@ -26,7 +26,7 @@ public class RouterConfig {
     RouterFunction<ServerResponse> shortlinkRouter(ShortlinkHandler handler) {
         return RouterFunctions.route()
                 .POST("/create", RequestPredicates.accept(MediaType.APPLICATION_JSON), handler::create)
-                //.GET("/func2", RequestPredicates.accept(MediaType.APPLICATION_JSON), handler::getSingle)
+                .GET("/{compressionCode}", RequestPredicates.accept(MediaType.APPLICATION_JSON), handler::access)
                 .build();
     }
 }
