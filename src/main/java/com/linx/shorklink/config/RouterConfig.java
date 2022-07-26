@@ -19,6 +19,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 public class RouterConfig {
     /**
      * 配置路由
+     *
      * @param handler
      * @return
      */
@@ -27,6 +28,8 @@ public class RouterConfig {
         return RouterFunctions.route()
                 .POST("/create", RequestPredicates.accept(MediaType.APPLICATION_JSON), handler::create)
                 .GET("/{compressionCode}", RequestPredicates.accept(MediaType.APPLICATION_JSON), handler::access)
+                .GET("/findAll/1", RequestPredicates.accept(MediaType.ALL), handler::findAll)
                 .build();
+        //Bad return type in method reference: cannot convert reactor.core.publisher.Flux<com.linx.shorklink.model.po.UrlMap> to reactor.core.publisher.Mono<org.springframework.web.reactive.function.server.ServerResponse>
     }
 }

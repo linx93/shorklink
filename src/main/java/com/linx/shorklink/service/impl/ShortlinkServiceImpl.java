@@ -41,7 +41,7 @@ public class ShortlinkServiceImpl implements ShortlinkService {
         //ValidatorUtil.isUrl(request.longUrl());
         String compressionCode = ShortlinkUtils.toCompression(request.longUrl());
         String shortlink = buildShortlink(compressionCode);
-        UrlMap urlMap = new UrlMap(null, shortlink, request.longUrl(), DigestUtils.md5DigestAsHex(shortlink.getBytes(StandardCharsets.UTF_8)), DigestUtils.md5DigestAsHex(request.longUrl().getBytes(StandardCharsets.UTF_8)), compressionCode, request.description(), 1, OffsetDateTime.now(), OffsetDateTime.now(), "linxCreator", "linxCreator", 0, 1L);
+        UrlMap urlMap = new UrlMap(null, shortlink, request.longUrl(), DigestUtils.md5DigestAsHex(shortlink.getBytes(StandardCharsets.UTF_8)), DigestUtils.md5DigestAsHex(request.longUrl().getBytes(StandardCharsets.UTF_8)), compressionCode, request.description(), 1, "linxCreator", "linxCreator", 0, 1L);
        urlMapRepository.save(urlMap);
         return null;
     }

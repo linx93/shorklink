@@ -26,7 +26,8 @@ public class RepositoryTest {
 
     @Test
     void urlMapRepositoryFindTest() {
-        UrlMap urlMap = new UrlMap(null, "11", "sss1", "11", "11", "1232", "www1", 1, null, null, "linx", "linx", 1, 123L);
+        //UrlMap urlMap = new UrlMap(null, "11", "sss1", "11", "11", "1232", "www1", 1, null, null, "linx", "linx", 1, 123L);
+        UrlMap urlMap = new UrlMap(null, "11", "sss1", "11", "11", "1232", "www1", 1,  "linx", "linx", 1, 123L);
 
         var example = Example.of(urlMap);
 
@@ -45,8 +46,10 @@ public class RepositoryTest {
 
     @Test
     void urlMapRepositoryInsertTest() {
-        UrlMap urlMap1 = new UrlMap(null, "11", "sss1", "11", "11", "1232", "www1", 1, OffsetDateTime.now(), OffsetDateTime.now(), "linx", "linx", 1, 123L);
-        UrlMap urlMap2 = new UrlMap(null, "22", "sss2", "22", "22", "2223", "www2", 1, OffsetDateTime.now(), OffsetDateTime.now(), "linx", "linx", 1, 123L);
+        //UrlMap urlMap1 = new UrlMap(null, "11", "sss1", "11", "11", "1232", "www1", 1, OffsetDateTime.now(), OffsetDateTime.now(), "linx", "linx", 1, 123L);
+        UrlMap urlMap1 = new UrlMap(null, "11", "sss1", "11", "11", "1232", "www1", 1,  "linx", "linx", 1, 123L);
+        //UrlMap urlMap2 = new UrlMap(null, "22", "sss2", "22", "22", "2223", "www2", 1, OffsetDateTime.now(), OffsetDateTime.now(), "linx", "linx", 1, 123L);
+        UrlMap urlMap2 = new UrlMap(null, "22", "sss2", "22", "22", "2223", "www2", 1,  "linx", "linx", 1, 123L);
         urlMapRepository.saveAll(List.of(urlMap1, urlMap2))
                 .as(StepVerifier::create) //
                 .expectNextCount(2) //
