@@ -41,9 +41,10 @@ public class ShortlinkHandler {
         //todo 这里还得研究一下CreateShortlinkRequest的参数验证怎么做
         //Mono<CreateShortlinkRequest> body = serverRequest.bodyToMono(CreateShortlinkRequest.class);
         //body.subscribe(ShortlinkHandler::println);
-        Mono<UrlMap> map = serverRequest.bodyToMono(CreateShortlinkRequest.class).publishOn(Schedulers.parallel()).map(shortlinkService::defaultCreate);
-        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(map, Boolean.class);
-
+        //Mono<UrlMap> map = serverRequest.bodyToMono(CreateShortlinkRequest.class).publishOn(Schedulers.parallel()).map(shortlinkService::defaultCreate);
+        Mono<CreateShortlinkRequest> createShortlinkRequestMono = serverRequest.bodyToMono(CreateShortlinkRequest.class);
+        Mono<UrlMap> urlMapMono = shortlinkService.defaultCreate(createShortlinkRequestMono.block());
+        return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(urlMapMono, Boolean.class);
     }
 
     /**

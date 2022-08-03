@@ -2,6 +2,7 @@ package com.linx.shorklink.service;
 
 import com.linx.shorklink.model.po.UrlMap;
 import com.linx.shorklink.model.request.CreateShortlinkRequest;
+import reactor.core.publisher.Mono;
 
 
 /**
@@ -17,5 +18,5 @@ public interface ShortlinkService {
      * @param element element
      * @return Mono<UrlMap>
      */
-    UrlMap defaultCreate(CreateShortlinkRequest element);
+    Mono<UrlMap> defaultCreate(CreateShortlinkRequest element);
 }
